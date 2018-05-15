@@ -2,17 +2,15 @@ import React from "react";
 import { CartModal } from "../../Cart";
 import Button from "theme/ui/atoms/Button";
 import IconWithLabel from "theme/ui/molecules/IconWithLabel";
+import "./Navigation.scss";
 
 const Navigation = () => {
   return (
-    <nav>
-      <CartModal>
-        {openCart => (
-          <Button type="invisible" onClick={openCart}>
-            <IconWithLabel icon="cart">Cart</IconWithLabel>
-          </Button>
-        )}
-      </CartModal>
+    <nav className="navigation">
+      <span>Browse sites</span>
+      <span>Our selection</span>
+      <span>Our dataBase</span>
+      <span>Browse sites</span>
     </nav>
   );
 };
