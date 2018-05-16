@@ -1,0 +1,22 @@
+$tilePadding: 16rem;
+$tileCardPadding: 8rem;
+.content-tile {
+  width: calc(100% - #{2 * $tilePadding});
+  &,
+  &--card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: $tilePadding;
+    padding-top: 2rem;
+  }
+  &--card {
+    width: calc(80% - #{2 * $tileCardPadding});
+    padding: $tileCardPadding;
+    padding-top: 2rem;
+    margin-top: -1em;
+    margin-bottom: -1em;
+    background: $white;
+    box-shadow: 0 4px 8px rgba(51, 51, 51, 0.35);
+  }
+}
