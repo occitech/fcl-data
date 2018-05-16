@@ -3,6 +3,7 @@
 
 query Home($id: Int!, $params: QueryInput!) {
   category(id: $id) {
+    id
     ...ProductListFragment
   }
   store {
