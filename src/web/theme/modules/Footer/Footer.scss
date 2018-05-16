@@ -3,4 +3,7 @@
   color: $reverseFontColor;
   text-align: center;
   padding: 1em;
+  &__logo {
+    margin: 3em;
+  }
 }

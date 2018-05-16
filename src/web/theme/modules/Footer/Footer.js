@@ -1,25 +1,20 @@
 import React from "react";
-import PropTypes from "prop-types";
-import StoreDetails from "../StoreDetails";
-import StoreContact from "../StoreContact";
-import EnhanceFooter from "./EnhanceFooter";
-import FooterQuery from "./FooterQuery.gql";
+import Link from "react-router-dom/Link";
+import Logo from "theme/ui/atoms/Logo";
+import Navigation from "theme/modules/Header/Navigation";
 import "./Footer.scss";
 
-const Footer = ({ store }) => {
+const Footer = () => {
   return (
     <footer className="footer">
-      {store && store.owner && <StoreDetails owner={store.owner} />}
-      {store && store.phone && <StoreContact phone={store.phone} />}
+      <div className="footer__logo">
+        <Link to="/">
+          <Logo />
+        </Link>
+      </div>
+      <Navigation />
     </footer>
   );
 };
 
-Footer.propTypes = {
-  store: PropTypes.shape({
-    owner: StoreDetails.propTypes.owner,
-    phone: StoreContact.propTypes.phone
-  })
-};
-
-export default EnhanceFooter(FooterQuery)(Footer);
+export default Footer;
