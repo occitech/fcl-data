@@ -8,12 +8,13 @@ import Header from "./theme/modules/Header";
 import Footer from "./theme/modules/Footer";
 import Home from "./theme/pages/Home";
 import TitleWithDescription from "theme/ui/molecules/TitleWithDescription";
-import Tile from "theme/modules/Tile";
 import { H2 } from "theme/ui/atoms/Typography/Heading";
+import OnePage from "theme/pages/OnePage";
 import NotFound from "./theme/pages/NotFound";
 
 const Cards = [
   {
+    name: "our-selection",
     style: "light-blue",
     contentStyle: "card",
     title: (
@@ -33,6 +34,7 @@ const Cards = [
     content: <div>content</div>
   },
   {
+    name: "our-database",
     style: "blue",
     title: (
       <TitleWithDescription
@@ -60,10 +62,11 @@ const Cards = [
     content: <div>content</div>
   },
   {
+    name: "our-demo",
     style: "light-blue",
     title: (
       <TitleWithDescription
-        title={<H2>title</H2>}
+        title={<H2>Make this demo a reality!</H2>}
         description={
           <div className="text">
             This was a demo showing you{" "}
@@ -89,15 +92,7 @@ export default () => (
             return (
               <Fragment>
                 <Home />
-                {Cards.map(card => (
-                  <Tile
-                    style={card.style}
-                    contentStyle={card.contentStyle}
-                    title={card.title}
-                  >
-                    {card.content}
-                  </Tile>
-                ))}
+                <OnePage cardsData={Cards} />
               </Fragment>
             );
           }}
