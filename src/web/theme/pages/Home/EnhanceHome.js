@@ -23,7 +23,6 @@ export default HomeQuery =>
       }),
       props: ({ data }) => ({
         category: data.category,
-        store: data.store,
         loading: data.loading
       })
     })

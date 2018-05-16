@@ -5,7 +5,4 @@ query Home($id: Int!, $params: QueryInput!) {
     id
     ...ProductListFragment
   }
-  store {
-    ...HomeBannerFragment
-  }
 }
