@@ -1,0 +1,33 @@
+$homeLargeDesktopHeight: 30rem;
+$homeDesktopHeight: 20rem;
+$homeTabletHeight: 10rem;
+$homeHeight: 2rem;
+.home {
+  text-align: center;
+  padding: $homeHeight 0;
+  img {
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: -1;
+    width: 100vw;
+  }
+}
+
+@media screen and (min-width: $tablet) {
+  .home {
+    padding: $homeTabletHeight 0;
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  .home {
+    padding: $homeDesktopHeight 0;
+  }
+}
+
+@media screen and (min-width: $largeDesktop) {
+  .home {
+    padding: $homeLargeDesktopHeight 0;
+  }
+}
