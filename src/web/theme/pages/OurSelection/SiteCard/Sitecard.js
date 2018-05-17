@@ -6,7 +6,7 @@ const SiteCard = ({ site }) => {
   return (
     <div className="site-card">
       <div className="site-card__image">
-        <img src={site.image} />
+        <img alt={site.name} src={site.image} />
       </div>
       <div className="site-card__content">
         <div className="site-card__content__name">
