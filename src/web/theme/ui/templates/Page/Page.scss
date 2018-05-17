@@ -1,10 +1,12 @@
 .page {
+  margin-top: -$headerHeight;
   max-width: $desktop;
   display: flex;
   justify-content: center;
   position: relative;
   overflow: hidden;
   padding: 0 calc(100vw - #{$tablet});
+
   h1 {
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.35);
     color: $white;

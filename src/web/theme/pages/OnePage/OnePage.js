@@ -16,13 +16,9 @@ const cards = [
         description={
           <div className="our-selection__title-description">
             <p>
-              <div>
-                Sometimes, you don’t have time to search and want instant
-                results.
-              </div>
-              <div>
-                Be sure to regularly check our Cultural Sites’ Selection.
-              </div>
+              Sometimes, you don’t have time to search and want instant results.
+              <br />
+              Be sure to regularly check our Cultural Sites’ Selection.
             </p>
           </div>
         }
@@ -95,6 +91,6 @@ const OnePage = ({ cardsData }) => {
   );
 };
 
-OnePage.PropTypes = { cardsData: PropTypes.object };
+OnePage.propTypes = { cardsData: PropTypes.array };
 
 export default compose(withProps(props => ({ cardsData: cards })))(OnePage);

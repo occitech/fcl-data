@@ -1,4 +1,4 @@
-query Home($id: Int!, $params: QueryInput!) {
+query Home($id: Int!) {
   category(id: $id) {
     id
     image
