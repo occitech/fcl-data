@@ -19,4 +19,9 @@ $tileCardPadding: 8rem;
     background: $white;
     box-shadow: 0 4px 8px rgba(51, 51, 51, 0.35);
   }
+
+  &__content {
+    width: 100%;
+    overflow: hidden;
+  }
 }

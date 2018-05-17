@@ -1,0 +1,8 @@
+.our-selection {
+  display: flex;
+  transition: all 0.3s;
+  &__toggler {
+    display: flex;
+    justify-content: space-between;
+  }
+}
