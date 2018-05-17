@@ -10,6 +10,7 @@ import Home from "./theme/pages/Home";
 import TitleWithDescription from "theme/ui/molecules/TitleWithDescription";
 import { H2 } from "theme/ui/atoms/Typography/Heading";
 import OnePage from "theme/pages/OnePage";
+import OurSelection from "theme/pages/OurSelection";
 import NotFound from "./theme/pages/NotFound";
 
 const Cards = [
@@ -23,15 +24,19 @@ const Cards = [
         description={
           <div className="our-selection__title-description">
             <p>
-              Sometimes, you don’t have time to search and want instant results.
-              Be sure to regularly check our Cultural Sites’ Selection.{" "}
+              <div>
+                Sometimes, you don’t have time to search and want instant
+                results.
+              </div>
+              <div>
+                Be sure to regularly check our Cultural Sites’ Selection.
+              </div>
             </p>
-            <strong>Ready to discover awesome historical places?</strong>
           </div>
         }
       />
     ),
-    content: <div>content</div>
+    content: <OurSelection />
   },
   {
     name: "our-database",
