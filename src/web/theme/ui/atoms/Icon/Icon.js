@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import arrowLeft from "./arrow-left.svg?inline";
+import angleLeft from "./angle-left.svg?inline";
+import angleRight from "./angle-right.svg?inline";
 import close from "./close.svg?inline";
 import trash from "./trash.svg?inline";
 import cart from "./cart.svg?inline";
@@ -13,6 +15,25 @@ const Icon = ({ icon }) => {
         className="icon"
         dangerouslySetInnerHTML={{ __html: arrowLeft }}
         title="Go back"
+      />
+    );
+  } else if (icon === "angle-left") {
+    console.log("niek");
+    return (
+      <span
+        className="icon"
+        dangerouslySetInnerHTML={{ __html: angleLeft }}
+        aria-label="Left"
+        title="Left"
+      />
+    );
+  } else if (icon === "angle-right") {
+    return (
+      <span
+        className="icon"
+        dangerouslySetInnerHTML={{ __html: angleRight }}
+        aria-label="Right"
+        title="Right"
       />
     );
   } else if (icon === "close") {
@@ -46,7 +67,14 @@ const Icon = ({ icon }) => {
 };
 
 Icon.propTypes = {
-  icon: PropTypes.oneOf(["arrow-left", "close", "trash", "cart"]).isRequired
+  icon: PropTypes.oneOf([
+    "arrow-left",
+    "close",
+    "trash",
+    "cart",
+    "angle-left",
+    "angle-right"
+  ]).isRequired
 };
 
 export default Icon;
