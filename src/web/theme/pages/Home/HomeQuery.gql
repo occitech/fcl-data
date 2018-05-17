@@ -1,9 +1,6 @@
-#import "theme/modules/ProductList/ProductListFragment.gql"
-
 query Home($id: Int!, $params: QueryInput!) {
   category(id: $id) {
     id
     image
-    ...ProductListFragment
   }
 }

@@ -4,7 +4,7 @@
   justify-content: center;
   position: relative;
   overflow: hidden;
-  padding: 0 calc((100vw - #{$tablet}));
+  padding: 0 calc(100vw - #{$tablet});
   h1 {
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.35);
     color: $white;
@@ -13,14 +13,12 @@
 
 @media screen and (min-width: $desktop) {
   .page {
-    padding: 0 calc((100vw - #{$desktop}));
+    padding: 0 calc(100vw - #{$desktop});
   }
 }
 
 @media screen and (min-width: $largeDesktop) {
   .page {
-    //Here I had to use 75rem due to tests for padding weird comportement
-    //with 90rem (largedesktop) there wasn't enough padding and with 65rem (desktop) there was too much
-    padding: 0 calc((100vw - 75rem));
+    padding: 0 calc(100vw - 75rem);
   }
 }

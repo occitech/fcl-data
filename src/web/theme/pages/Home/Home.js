@@ -6,19 +6,20 @@ import { H1 } from "theme/ui/atoms/Typography/Heading";
 import createMediaUrlFromPath from "../../../utils/createMediaUrlFromPath.js";
 import "./Home.scss";
 
-const Home = ({ category, loading }) =>
-  console.log(category) || (
-    <Page>
+const Home = ({ category, loading }) => (
+  <Page>
+    {loading ? (
+      <div>Loading ...</div>
+    ) : (
       <div className="home">
-        <img
-          src={createMediaUrlFromPath(
-            "/media/catalog/category/adrien-tutin-379257-unsplash_1.png"
-          )}
-        />
-        <H1>History is</H1>
-        <H1>closer than you think!</H1>
+        <img src={createMediaUrlFromPath(category.image)} />
+        <H1>
+          <div>History is</div>
+          <div> closer than you think!</div>
+        </H1>
       </div>
-    </Page>
-  );
+    )}{" "}
+  </Page>
+);
 
 export default EnhanceHome(HomeQuery)(Home);
