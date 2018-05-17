@@ -1,12 +1,6 @@
-#import "theme/modules/ProductList/ProductListFragment.gql"
-#import "theme/modules/HomeBanner/HomeBannerFragment.gql"
-
 query Home($id: Int!, $params: QueryInput!) {
   category(id: $id) {
     id
-    ...ProductListFragment
-  }
-  store {
-    ...HomeBannerFragment
+    image
   }
 }
