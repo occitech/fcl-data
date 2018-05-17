@@ -8,8 +8,6 @@ export default OurSelectionQuery =>
       options: props => ({
         variables: {}
       }),
-      props: ({ data }) => {
-        console.log(data);
-      }
+      props: ({ data }) => {}
     })
   );

@@ -6,9 +6,6 @@ export default {
   },
 
   DataTourisme: {
-    sites: (_, __, context) =>
-      context.loadData().then(data => {
-        console.log(data);
-      })
+    sites: (_, __, context) => context.loadData().then(data => {})
   }
 };

@@ -18,7 +18,6 @@ const Icon = ({ icon }) => {
       />
     );
   } else if (icon === "angle-left") {
-    console.log("niek");
     return (
       <span
         className="icon"
