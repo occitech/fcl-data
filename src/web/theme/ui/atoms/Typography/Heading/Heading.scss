@@ -1,16 +1,26 @@
 h1 {
   font-size: $h1;
 }
+h2 {
+  font-size: $h2;
+  margin: $h2Margin 0;
+}
 
 @media screen and (min-width: $tablet) {
   h1 {
     font-size: $mega;
+  }
+  h2 {
+    font-size: $h1;
   }
 }
 
 @media screen and (min-width: $largeDesktop) {
   h1 {
     font-size: $giga;
+  }
+  h2 {
+    font-size: $mega;
   }
 }
 

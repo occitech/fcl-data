@@ -1,0 +1,15 @@
+.tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &--red {
+    background: $brandPrimary;
+  }
+  &--blue {
+    background: $brandSecondary;
+  }
+  &--light-blue {
+    background: $brandTertiary;
+  }
+}
