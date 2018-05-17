@@ -1,19 +1,24 @@
 import React from "react";
 import HomeQuery from "./HomeQuery.gql";
 import EnhanceHome from "./EnhanceHome";
-import ProductList from "theme/modules/ProductList";
-import HomeBanner from "theme/modules/HomeBanner";
-import LoadingArea from "theme/ui/molecules/LoadingArea";
 import Page from "theme/ui/templates/Page";
+import { H1 } from "theme/ui/atoms/Typography/Heading";
+import createMediaUrlFromPath from "../../../utils/createMediaUrlFromPath.js";
+import "./Home.scss";
 
-const Home = ({ store, category, loading }) => (
+const Home = ({ category, loading }) => (
   <Page>
-    <HomeBanner storeName={store && store.name} />
     {loading ? (
-      <LoadingArea>Loading products…</LoadingArea>
+      <div>Loading ...</div>
     ) : (
-      <ProductList products={category.layer.products} />
-    )}
+      <div className="home">
+        <img src={createMediaUrlFromPath(category.image)} />
+        <H1>
+          <div>History is</div>
+          <div> closer than you think!</div>
+        </H1>
+      </div>
+    )}{" "}
   </Page>
 );
 
