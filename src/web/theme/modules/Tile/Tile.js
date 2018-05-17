@@ -4,7 +4,7 @@ import ContentTile from "./ContentTile";
 import "./Tile.scss";
 
 const Tile = ({ title, children, style, contentStyle }) => {
-  const TileClass = `tile${style ? "--" + style : ""}`;
+  const TileClass = `tile${style ? " tile--" + style : ""}`;
 
   return (
     <div className={TileClass}>

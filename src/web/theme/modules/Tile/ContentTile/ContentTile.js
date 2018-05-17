@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import "./ContentTile.scss";
 
 const ContentTile = ({ title, children, style }) => {
-  const contentClass = `content-tile${style ? "--" + style : ""}`;
+  const contentClass = `content-tile${style ? " content-tile--" + style : ""}`;
   return (
     <div className={contentClass}>
       {title}

@@ -1,14 +1,7 @@
 .tile {
-  background: red;
-
-  &,
-  &--light-blue,
-  &--red,
-  &--blue {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   &--red {
     background: $brandPrimary;
