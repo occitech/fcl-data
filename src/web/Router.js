@@ -24,7 +24,7 @@ const Cards = [
           <div className="our-selection__title-description">
             <p>
               Sometimes, you don’t have time to search and want instant results.
-              Be sure to regularly check our Cultural Sites’ Selection.{" "}
+              Be sure to regularly check our Cultural Sites’ Selection.
             </p>
             <strong>Ready to discover awesome historical places?</strong>
           </div>
