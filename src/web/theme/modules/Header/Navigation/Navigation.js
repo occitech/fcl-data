@@ -7,10 +7,10 @@ import "./Navigation.scss";
 const Navigation = () => {
   return (
     <nav className="navigation">
-      <span>Browse sites</span>
-      <span>Our selection</span>
-      <span>Our dataBase</span>
-      <span>Browse sites</span>
+      <ul>Browse sites</ul>
+      <ul>Our selection</ul>
+      <ul>Our database</ul>
+      <ul>contact us</ul>
     </nav>
   );
 };

@@ -11,7 +11,7 @@ const TitleWithDescription = ({ title, description }) => {
   );
 };
 
-TitleWithDescription.PropTypes = {
+TitleWithDescription.propTypes = {
   title: PropTypes.node,
   description: PropTypes.node
 };

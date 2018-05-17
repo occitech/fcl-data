@@ -1,6 +1,13 @@
 .footer {
-  background: $brandPrimaryBackground;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: $brandPrimary;
   color: $reverseFontColor;
   text-align: center;
   padding: 1em;
+
+  &__logo {
+    margin: 3em;
+  }
 }
