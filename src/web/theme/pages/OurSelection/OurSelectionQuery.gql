@@ -1,5 +1,9 @@
 query OurSelection {
   datas {
-    sites
+    sites {
+      id
+      description
+      name
+    }
   }
 }

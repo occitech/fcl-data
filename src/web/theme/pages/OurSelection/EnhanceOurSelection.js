@@ -9,7 +9,10 @@ export default OurSelectionQuery =>
         variables: {}
       }),
       props: ({ data }) => {
-        console.log(data);
+        return {
+          sites: data.datas ? data.datas.sites.slice(200, 210) : "loading",
+          loading: data.loading
+        };
       }
     })
   );
