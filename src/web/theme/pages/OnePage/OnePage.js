@@ -6,6 +6,7 @@ import TitleWithDescription from "theme/ui/molecules/TitleWithDescription";
 import { H2 } from "theme/ui/atoms/Typography/Heading";
 
 import OurSelection from "theme/pages/OurSelection";
+import OurDatabase from "theme/pages/OurDatabase";
 
 const cards = [
   {
@@ -54,7 +55,7 @@ const cards = [
         }
       />
     ),
-    content: <div>content</div>
+    content: <OurDatabase />
   },
   {
     name: "our-demo",

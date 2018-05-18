@@ -1,0 +1,14 @@
+#histogram {
+  color: black;
+  font-size: 10px;
+  font-weight: bold;
+  display: flex;
+  flex-wrap: wrap;
+}
+#histogram span {
+  display: inline-block;
+  margin-right: 3px;
+  margin-bottom: 3em;
+  width: 15em;
+  text-align: center;
+}

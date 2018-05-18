@@ -1,0 +1,8 @@
+query OurSelection {
+  datas {
+    sites {
+      id
+      type
+    }
+  }
+}
