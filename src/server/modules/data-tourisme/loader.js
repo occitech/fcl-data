@@ -8,5 +8,15 @@ export default {
       .get(
         `https://diffuseur.datatourisme.gouv.fr/webservice/1532da3f576cd29193bb2d309f339e39/${app_key}`
       )
-      .then(response => response.data.results[0])
+      .then(response =>
+        response.data["@graph"].filter(site => {
+          return (
+            site["@type"] &&
+            typeof site["@type"] === "object" &&
+            site["@type"].some(type => {
+              return type === "CulturalSite";
+            })
+          );
+        })
+      )
 };
