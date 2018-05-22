@@ -7,9 +7,9 @@ Front-Commerce is a React application with a GraphQL middleware for building eCo
 With this theme, we show how easy it is to connect Front-Commerce Lite with an external service and start working with it.  As an example, we choose to connect our product with an external database :  DataTourisme.
 Data is a powerful way to learn about your consumers. You can learn a lot about their preferences, what they are searching, which page they’ve seen and more…
 
-In our theme, we choose to play with data concerning French Cultural Sites. We wanted to create a custom Landing Page using these data. 4 random sites are currently display on the first section. The description is directly coming from DataTourisme’s site.
+In our theme, we choose to play with data concerning French Cultural Sites. We wanted to create a custom Landing Page using these data. the first sites are currently display on the first section. The description is directly coming from DataTourisme’s api.
 
-Below these 4 sites, we choose to display an overall idea of what users can find on DataTourisme’s site. We add a simple chart presenting every type of cultural site available and how many of it the user could find on the site. This is a generic chart, used in a simple example. You can do a lot more with the database and imagination.
+Below these sites, we choose to display an overall idea of what users can find on DataTourisme’s api. We add a simple chart presenting every type of cultural site available and how many of it the user could find on the site. This is a generic chart, used in a simple example. You can do a lot more with the database and imagination.
 
 And you, what would you use datas for ?
 
