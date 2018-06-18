@@ -57,8 +57,9 @@ export default OurDatabaseQuery =>
               (typeValue, i) => Object.keys(typeHist)[i] + " : " + typeValue
             )
             .style("height", typeValue => typeValue / 50 + "px")
+            .style("color", "white")
             .style("background", typeValue =>
-              d3.interpolateViridis(typeValue / 2000)
+              d3.interpolateViridis(typeValue / 25000)
             );
         }
       }
