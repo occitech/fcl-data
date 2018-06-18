@@ -1,0 +1,19 @@
+.our-demo__title {
+  font-size: $h1;
+
+  strong {
+    color: $brandPrimary;
+  }
+}
+
+@media screen and (min-width: $tablet) {
+  .our-demo__title {
+    font-size: $mega;
+  }
+}
+
+@media screen and (min-width: $largeDesktop) {
+  .our-demo__title {
+    font-size: $giga;
+  }
+}
