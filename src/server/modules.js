@@ -1,4 +1,5 @@
 import StoreInformation from "./modules/store-information";
+import DataTourisme from "./modules/data-tourisme";
 
 export default [
   // In a real Front-Commerce application you could load core modules
@@ -7,6 +8,6 @@ export default [
   // This is where you could combine several core datasources to build
   // the project that match your needs and run away from a monolithic
   // architecture when it is not relevant
-
+  DataTourisme,
   StoreInformation
 ];

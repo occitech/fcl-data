@@ -1,0 +1,5 @@
+query OurSelection {
+  data {
+    sites
+  }
+}

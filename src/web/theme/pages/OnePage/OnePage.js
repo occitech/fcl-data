@@ -5,6 +5,8 @@ import Tile from "theme/modules/Tile";
 import TitleWithDescription from "theme/ui/molecules/TitleWithDescription";
 import { H2 } from "theme/ui/atoms/Typography/Heading";
 
+import OurSelection from "theme/pages/OurSelection";
+
 const cards = [
   {
     name: "our-selection",
@@ -24,7 +26,7 @@ const cards = [
         }
       />
     ),
-    content: <div>content</div>
+    content: <OurSelection />
   },
   {
     name: "our-database",
@@ -62,8 +64,8 @@ const cards = [
         title={<H2>Make this demo a reality!</H2>}
         description={
           <div className="text">
-            This was a demo showing you{" "}
-            <strong>how to easily play with data</strong>, with Front-Commerce
+            This was a demo showing you
+            <strong> how to easily play with data</strong>, with Front-Commerce
             Lite. Learn more about the potential off our complete Front-Commerce
             version by clicking here.
           </div>

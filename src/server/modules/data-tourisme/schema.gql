@@ -1,0 +1,14 @@
+type Query {
+  "All the cultural sites from data tourisme plateform"
+  data: DataTourisme
+}
+
+"General information about a store"
+type DataTourisme {
+  "data name"
+  name: String!
+  "sites"
+  sites: String
+  "madata"
+  madata: String!
+}

@@ -1,3 +1,5 @@
+$tilePadding: 16rem;
+$tileCardPadding: 8rem;
 .tile {
   display: flex;
   flex-direction: column;
@@ -11,5 +13,30 @@
   }
   &--light-blue {
     background: $brandTertiary;
+  }
+
+  &__content {
+    width: calc(100% - #{2 * $tilePadding});
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: $tilePadding;
+    padding-top: 2rem;
+
+    &--card {
+      width: calc(80% - #{2 * $tileCardPadding});
+      padding: $tileCardPadding;
+      padding-top: 2rem;
+      margin-top: -1em;
+      margin-bottom: -1em;
+      background: $white;
+      box-shadow: 0 4px 8px rgba(51, 51, 51, 0.35);
+    }
+
+    &__description {
+      width: 100%;
+      overflow: hidden;
+    }
   }
 }
