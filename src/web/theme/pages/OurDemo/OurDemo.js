@@ -2,6 +2,19 @@ import React from "react";
 import Link from "theme/ui/atoms/Typography/Link";
 import "./OurDemo.scss";
 
+const OurProduct = [
+  {
+    link: "https://github.com/occitech/fcl-onlinetooffline",
+    name: "Online to Offline"
+  },
+  { link: "https://github.com/occitech/fcl-blogshop", name: "Blogshop" },
+  {
+    link: "https://github.com/front-commerce/front-commerce-lite",
+    name: "Front-Commerce-Lite"
+  },
+  { link: "https://github.com/occitech/front-commerce", name: "Front-Commerce" }
+];
+
 const OurDemo = () => {
   return (
     <div className="our-demo">
@@ -9,26 +22,14 @@ const OurDemo = () => {
         Check out our other demos sites:
       </div>
       <div className="our-demo__content">
-        <Link external to="https://github.com/occitech/fcl-onlinetooffline">
-          <span>Online to Offline</span>
-        </Link>
-        <Link external to="https://github.com/occitech/fcl-blogshop">
-          <span>Blogshop</span>
-        </Link>
-        <Link
-          external
-          to="https://github.com/front-commerce/front-commerce-lite"
-        >
-          <span>Front-Commerce-Lite</span>
-        </Link>
-        <Link external to="https://github.com/occitech/front-commerce">
-          <span>Front-Commerce</span>
-        </Link>
+        {OurProduct.map(demo => (
+          <Link external to={demo.link}>
+            {demo.name}
+          </Link>
+        ))}
       </div>
     </div>
   );
 };
-
-OurDemo.prototype = {};
 
 export default OurDemo;
