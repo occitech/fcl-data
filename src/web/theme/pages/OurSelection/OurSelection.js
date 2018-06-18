@@ -53,7 +53,7 @@ const OurSelection = ({ ourSelectionTranslate, setOurSelectionTranslate }) => {
         ourSelectionTranslate={ourSelectionTranslate}
         setOurSelectionTranslate={setOurSelectionTranslate}
         cardWidth={cardWidth}
-        datas={fakeData}
+        data={fakeData}
       />
       <div
         style={{ transform: `translateX(-${ourSelectionTranslate}em)` }}
