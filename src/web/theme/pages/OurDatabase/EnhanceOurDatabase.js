@@ -10,7 +10,7 @@ export default OurDatabaseQuery =>
       }),
       props: ({ data }) => {
         return {
-          sites: data.datas ? data.datas.sites : null,
+          sites: data.data ? data.data.sites : null,
           loading: data.loading
         };
       }

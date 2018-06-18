@@ -8,11 +8,9 @@ export default OurSelectionQuery =>
       options: props => ({
         variables: {}
       }),
-      props: ({ data }) => {
-        return {
-          sites: data.datas ? data.datas.sites.slice(200, 210) : "loading",
-          loading: data.loading
-        };
-      }
+      props: ({ data }) => ({
+        sites: data.data ? data.data.sites.slice(200, 210) : "loading",
+        loading: data.loading
+      })
     })
   );
