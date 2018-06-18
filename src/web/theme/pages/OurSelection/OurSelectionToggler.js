@@ -6,7 +6,7 @@ const OurSelectionToggler = ({
   ourSelectionTranslate,
   setOurSelectionTranslate,
   cardWidth,
-  datas
+  data
 }) => {
   return (
     <div className="our-selection__toggler">
@@ -24,7 +24,7 @@ const OurSelectionToggler = ({
         </IconButton>
         <IconButton
           onClick={() => {
-            if (ourSelectionTranslate < (datas.length - 3) * cardWidth) {
+            if (ourSelectionTranslate < (data.length - 3) * cardWidth) {
               setOurSelectionTranslate(ourSelectionTranslate + cardWidth);
             }
           }}
@@ -41,7 +41,7 @@ OurSelectionToggler.PropTypes = {
   ourSelectionTranslate: PropTypes.number,
   setOurSelectionTranslate: PropTypes.func,
   cardWidth: PropTypes.number,
-  datas: PropTypes.array
+  data: PropTypes.array
 };
 
 export default OurSelectionToggler;

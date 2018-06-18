@@ -1,11 +1,11 @@
 type Query {
   "All the cultural sites from data tourisme plateform"
-  datas: DataTourisme
+  data: DataTourisme
 }
 
 "General information about the differents sites that you can visit"
 type DataTourisme {
-  "datas name"
+  "data name"
   name: String!
   "sites"
   sites: [Site]!

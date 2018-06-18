@@ -1,3 +1,3 @@
-import Sitecard from "./Sitecard";
+import SiteCard from "./SiteCard";
 
-export default Sitecard;
+export default SiteCard;

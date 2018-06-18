@@ -2,7 +2,7 @@ const dataTourisme = { madata: "infoUtiles" };
 
 export default {
   Query: {
-    datas: () => dataTourisme
+    data: () => dataTourisme
   },
 
   DataTourisme: {

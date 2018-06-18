@@ -22,7 +22,7 @@ const OurSelection = ({
         ourSelectionTranslate={ourSelectionTranslate}
         setOurSelectionTranslate={setOurSelectionTranslate}
         cardWidth={cardWidth}
-        datas={sites}
+        data={sites}
       />
       <div
         style={{ transform: `translateX(-${ourSelectionTranslate}em)` }}

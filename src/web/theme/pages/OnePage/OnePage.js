@@ -65,15 +65,15 @@ const cards = [
         title={<H2>Make this demo a reality!</H2>}
         description={
           <div className="text">
-            This was a demo showing you{" "}
-            <strong>how to easily play with data</strong>, with Front-Commerce
+            This was a demo showing you
+            <strong> how to easily play with data</strong>, with Front-Commerce
             Lite. Learn more about the potential off our complete Front-Commerce
             version by clicking here.
           </div>
         }
       />
     ),
-    content: <div>content</div>
+    content: <div />
   }
 ];
 

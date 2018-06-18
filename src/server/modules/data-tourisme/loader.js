@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const app_key = "1b503cbf-51b0-414c-8bdd-82c493f87f7d";
+import { app_key } from "../../../../config.js";
 
 export default {
   loadData: () =>
