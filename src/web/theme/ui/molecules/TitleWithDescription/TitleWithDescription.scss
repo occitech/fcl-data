@@ -1,4 +1,22 @@
 .title-with-description {
   padding: 4rem 0;
-  width: 100%;
+  width: 10em;
+}
+
+@media screen and (min-width: $tablet) {
+  .title-with-description {
+    width: 16em;
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  .title-with-description {
+    width: 25em;
+  }
+}
+
+@media screen and (min-width: $largeDesktop) {
+  .title-with-description {
+    width: 32em;
+  }
 }

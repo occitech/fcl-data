@@ -2,8 +2,7 @@ query OurSelection {
   data {
     sites {
       id
-      description
-      name
+      type
     }
   }
 }

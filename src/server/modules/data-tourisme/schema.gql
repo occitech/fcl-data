@@ -3,12 +3,24 @@ type Query {
   data: DataTourisme
 }
 
-"General information about a store"
+"General information about the differents sites that you can visit"
 type DataTourisme {
   "data name"
   name: String!
   "sites"
-  sites: String
+  sites: [Site]!
   "madata"
   madata: String!
+}
+
+"General information about a specific site"
+type Site {
+  "site id"
+  id: ID!
+  "site name"
+  name: String
+  "site description"
+  description: String
+  "site types"
+  type: [String]!
 }

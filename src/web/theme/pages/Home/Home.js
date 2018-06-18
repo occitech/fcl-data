@@ -12,7 +12,7 @@ const Home = ({ category, loading }) => (
       <div>Loading ...</div>
     ) : (
       <div className="home">
-        <img src={createMediaUrlFromPath(category.image)} />
+        <img alt="castle" src={createMediaUrlFromPath(category.image)} />
         <H1>
           <div>History is</div>
           <div> closer than you think!</div>
