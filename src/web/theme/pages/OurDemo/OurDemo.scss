@@ -1,19 +1,42 @@
-.our-demo__title {
-  font-size: $h1;
+.our-demo {
+  &__title {
+    font-size: $h1;
+    margin-bottom: $h1;
 
-  strong {
-    color: $brandPrimary;
+    strong {
+      color: $brandPrimary;
+    }
+  }
+  &__sub-title {
+    text-decoration: underline;
+    margin-bottom: 2em;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    & > * {
+      width: 7em;
+      font-weight: $bold;
+      color: $fontColor;
+    }
+    a {
+      text-decoration: none;
+    }
   }
 }
 
 @media screen and (min-width: $tablet) {
   .our-demo__title {
     font-size: $mega;
+    margin-bottom: $mega;
   }
 }
 
 @media screen and (min-width: $largeDesktop) {
   .our-demo__title {
     font-size: $giga;
+    margin-bottom: $giga;
   }
 }

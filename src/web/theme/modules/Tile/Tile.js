@@ -22,7 +22,7 @@ Tile.PropTypes = {
   title: PropTypes.node,
   content: PropTypes.node,
   style: PropTypes.oneOf(["light-blue", "red", "blue"]),
-  contentStyle: PropTypes.oneOf(["default", "card"])
+  contentStyle: PropTypes.oneOf(["default", "card", "center"])
 };
 
 export default Tile;

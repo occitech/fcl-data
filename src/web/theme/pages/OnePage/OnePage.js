@@ -62,6 +62,7 @@ const cards = [
   {
     name: "our-demo",
     style: "light-blue",
+    contentStyle: "center",
     title: (
       <TitleWithDescription
         title={
