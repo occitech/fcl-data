@@ -70,7 +70,7 @@ const cards = [
         }
       />
     ),
-    content: <div>content</div>
+    content: <div />
   }
 ];
 
