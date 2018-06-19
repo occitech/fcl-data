@@ -2,7 +2,7 @@ import React from "react";
 import Link from "theme/ui/atoms/Typography/Link";
 import "./OurDemo.scss";
 
-const OurProduct = [
+const ourProduct = [
   {
     link: "https://github.com/occitech/fcl-onlinetooffline",
     name: "Online to Offline"
@@ -22,8 +22,8 @@ const OurDemo = () => {
         Check out our other demos sites:
       </div>
       <div className="our-demo__content">
-        {OurProduct.map(demo => (
-          <Link external to={demo.link}>
+        {ourProduct.map(demo => (
+          <Link key={demo.name} external to={demo.link}>
             {demo.name}
           </Link>
         ))}

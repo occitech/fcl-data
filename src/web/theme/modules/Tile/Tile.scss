@@ -1,5 +1,5 @@
-$tileWidthPadding: 16rem;
-$tileHeightPadding: 8rem;
+$tileHorizontalSpacing: 16rem;
+$tileVerticalSpacing: 8rem;
 $tileMobilePadding: 2rem;
 $tileCardPadding: 8rem;
 $tileCardMobilePadding: 2rem;
@@ -54,8 +54,8 @@ $tileCardMobilePadding: 2rem;
 
 @media screen and (min-width: $tablet) {
   .tile__content {
-    width: calc(100% - #{2 * $tileWidthPadding});
-    padding: $tileHeightPadding $tileWidthPadding;
+    width: calc(100% - #{2 * $tileHorizontalSpacing});
+    padding: $tileVerticalSpacing $tileHorizontalSpacing;
     align-items: flex-start;
     &--card {
       width: calc(80% - #{$tileCardPadding});
