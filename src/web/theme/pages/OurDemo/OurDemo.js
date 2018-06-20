@@ -12,7 +12,15 @@ const ourProduct = [
     link: "https://github.com/front-commerce/front-commerce-lite",
     name: "Front-Commerce-Lite"
   },
-  { link: "https://github.com/occitech/front-commerce", name: "Front-Commerce" }
+  {
+    link: "https://github.com/occitech/front-commerce",
+    name: "Front-Commerce"
+  },
+  {
+    link:
+      "https://github.com/search?q=topic%3Afront-commerce-lite&type=Repositories",
+    name: "All repositories on the topic"
+  }
 ];
 
 const OurDemo = () => {
