@@ -90,6 +90,7 @@ const OnePage = ({ cardsData }) => {
       {cardsData.map(card => (
         <Tile
           key={card.name}
+          name={card.name}
           style={card.style}
           contentStyle={card.contentStyle}
           title={card.title}

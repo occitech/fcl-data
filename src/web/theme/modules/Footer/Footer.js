@@ -6,7 +6,7 @@ import "./Footer.scss";
 
 const Footer = () => {
   return (
-    <footer className="footer">
+    <footer id="footer" className="footer">
       <div className="footer__logo">
         <Link to="/">
           <Logo />
