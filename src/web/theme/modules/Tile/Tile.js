@@ -18,7 +18,7 @@ const Tile = ({ name, title, children, style, contentStyle }) => {
   );
 };
 
-Tile.PropTypes = {
+Tile.propTypes = {
   title: PropTypes.node,
   content: PropTypes.node,
   style: PropTypes.oneOf(["light-blue", "red", "blue"]),
