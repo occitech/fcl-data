@@ -8,9 +8,16 @@ export default OurSelectionQuery =>
       options: props => ({
         variables: {}
       }),
-      props: ({ data }) => ({
-        sites: data.data ? data.data.sites.slice(200, 210) : "loading",
-        loading: data.loading
-      })
+      props: ({ data, ownProps }) => {
+        return {
+          sites:
+            data.data && ownProps.randomSitesIndex
+              ? data.data.sites
+                  .filter(site => site.description && site.hasRepresentation)
+                  .slice(200, 210)
+              : "loading",
+          loading: data.loading
+        };
+      }
     })
   );

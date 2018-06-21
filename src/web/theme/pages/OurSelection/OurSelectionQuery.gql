@@ -4,6 +4,7 @@ query OurSelection {
       id
       description
       name
+      hasRepresentation
     }
   }
 }
