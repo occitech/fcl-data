@@ -1,7 +1,7 @@
 const dataTourisme = {};
 
 const FilterObjectsByChildrenKey = (objects, assertingKey) => {
-  objects.filter(object => {
+  return objects.filter(object => {
     let objectFound = false;
     Object.keys(object).forEach(key => {
       if (key === assertingKey) {
@@ -12,6 +12,20 @@ const FilterObjectsByChildrenKey = (objects, assertingKey) => {
   });
 };
 
+const getSchemaPictureObjectFromSitesObject = response => {
+  return FilterObjectsByChildrenKey(
+    response,
+    "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasRelatedResource"
+  )[0][
+    "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasRelatedResource"
+  ][0]["@id"].replace("https://data.datatourisme.gouv.fr/", "");
+};
+const getPictureUrlFromSchemaPictureObject = schemaPic => {
+  return FilterObjectsByChildrenKey(
+    schemaPic,
+    "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#locator"
+  )[0];
+};
 const getSchemaGeoObjectFromSitesObject = response => {
   return FilterObjectsByChildrenKey(response, "http://schema.org/geo")[0][
     "http://schema.org/geo"
@@ -42,7 +56,8 @@ export default {
                 ? site["rdfs:comment"]["@value"]
                 : null,
               type: site["@type"] ? site["@type"] : null,
-              language: site.availableLanguage ? site.availableLanguage : null
+              language: site.availableLanguage ? site.availableLanguage : null,
+              hasRepresentation: site.hasRepresentation ? true : false
             };
           })
         );
@@ -81,6 +96,24 @@ export default {
                         "http://schema.org/longitude"
                       ][0]["@value"]
                     }))
+                : null,
+              picture: site.hasRepresentation
+                ? context
+                    .loadSitesLocation(
+                      site.hasRepresentation["@id"].replace("data:", "")
+                    )
+
+                    .then(response =>
+                      context.loadSitesLocation(
+                        getSchemaPictureObjectFromSitesObject(response)
+                      )
+                    )
+                    .then(
+                      schemaPic =>
+                        getPictureUrlFromSchemaPictureObject(schemaPic)[
+                          "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#locator"
+                        ][0]["@value"]
+                    )
                 : null
             };
           })[0]

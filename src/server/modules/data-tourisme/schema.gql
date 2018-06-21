@@ -27,6 +27,10 @@ type Site {
   language: [String]
   "site location"
   location: Location
+  "site picture representation"
+  picture: String
+  "site has picture representation"
+  hasRepresentation: Boolean
 }
 
 "Classic geoLocation format"
