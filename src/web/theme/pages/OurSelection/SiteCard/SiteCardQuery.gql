@@ -1,0 +1,8 @@
+query SiteCard($id: ID!) {
+  data {
+    site(id: $id) {
+      id
+      picture
+    }
+  }
+}
