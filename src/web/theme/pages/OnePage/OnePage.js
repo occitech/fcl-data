@@ -8,6 +8,10 @@ import { H2 } from "theme/ui/atoms/Typography/Heading";
 import OurSelection from "theme/pages/OurSelection";
 import OurDatabase from "theme/pages/OurDatabase";
 
+function getRandomArbitrary(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
 const cards = [
   {
     name: "our-selection",
@@ -27,7 +31,7 @@ const cards = [
         }
       />
     ),
-    content: <OurSelection />
+    content: <OurSelection randomSitesIndex={getRandomArbitrary(100, 2000)} />
   },
   {
     name: "our-database",
