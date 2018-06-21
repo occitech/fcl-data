@@ -1,0 +1,43 @@
+$siteLargeDesktopHeight: 25rem;
+$siteDesktopHeight: 20rem;
+$siteTabletHeight: 15rem;
+$siteHeight: 10rem;
+
+.site {
+  &__picture {
+    text-align: center;
+    padding: $siteHeight 0 0 0;
+    overflow: hidden;
+
+    img {
+      top: 0;
+      left: 0;
+      position: absolute;
+      z-index: -1;
+      width: 100vw;
+    }
+  }
+}
+@media screen and (min-width: $tablet) {
+  .site {
+    &__picture {
+      padding: $siteTabletHeight 0;
+    }
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  .site {
+    &__picture {
+      padding: $siteDesktopHeight 0;
+    }
+  }
+}
+
+@media screen and (min-width: $largeDesktop) {
+  .site {
+    &__picture {
+      padding: $siteLargeDesktopHeight 0;
+    }
+  }
+}
