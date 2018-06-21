@@ -1,5 +1,6 @@
 import React from "react";
 import PropType from "prop-types";
+import Link from "theme/ui/atoms/Typography/Link";
 import "./SiteCard.scss";
 
 const fakeData = [
@@ -51,6 +52,7 @@ const fakeData = [
 const SiteCard = ({ site, siteIndex }) => {
   return (
     <div className="site-card">
+      <Link to={`/site/${site.id}`}>
       <div className="site-card__image">
         {site.image ? (
           <img alt={site.name} src={site.image} />
@@ -67,6 +69,7 @@ const SiteCard = ({ site, siteIndex }) => {
             ? site.description.slice(0, 250) + "..."
             : site.description}
         </div>
+      </Link>
       </div>
     </div>
   );
