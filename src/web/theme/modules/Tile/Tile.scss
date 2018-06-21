@@ -2,6 +2,7 @@ $tilePadding: 16rem;
 $tileMobilePadding: 2rem;
 $tileCardPadding: 8rem;
 $tileCardMobilePadding: 2rem;
+
 .tile {
   display: flex;
   flex-direction: column;
@@ -20,10 +21,12 @@ $tileCardMobilePadding: 2rem;
   &__content {
     width: calc(100% - #{2 * $tileMobilePadding});
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
     padding: 0;
     padding-top: 2rem;
+    justify-content: space-between;
 
     &--card {
       width: calc(80% - #{$tileCardMobilePadding});
@@ -35,6 +38,14 @@ $tileCardMobilePadding: 2rem;
       box-shadow: 0 4px 8px rgba(51, 51, 51, 0.35);
     }
 
+    &__right-side-data {
+      padding: 5rem 2rem;
+      flex: 1;
+      width: 40%;
+      display: none;
+      overflow: hidden;
+    }
+
     &__description {
       width: 100%;
       overflow: hidden;
@@ -42,6 +53,13 @@ $tileCardMobilePadding: 2rem;
   }
 }
 
+@media screen and (max-width: $tablet) {
+  .tile__content__title {
+    .title-with-description {
+      width: unset;
+    }
+  }
+}
 @media screen and (min-width: $tablet) {
   .tile__content {
     width: calc(100% - #{2 * $tilePadding});
@@ -50,6 +68,9 @@ $tileCardMobilePadding: 2rem;
     &--card {
       width: calc(80% - #{$tileCardPadding});
       padding: $tileCardPadding;
+    }
+    &__right-side-data {
+      display: unset;
     }
   }
 }
