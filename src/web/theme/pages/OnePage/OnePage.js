@@ -7,6 +7,8 @@ import { H2 } from "theme/ui/atoms/Typography/Heading";
 
 import OurSelection from "theme/pages/OurSelection";
 import OurDatabase from "theme/pages/OurDatabase";
+import OurDemo from "theme/pages/OurDemo";
+import OurDemoTitle from "theme/pages/OurDemo/OurDemoTitle";
 
 const cards = [
   {
@@ -60,9 +62,14 @@ const cards = [
   {
     name: "our-demo",
     style: "light-blue",
+    contentStyle: "center",
     title: (
       <TitleWithDescription
-        title={<H2>Make this demo a reality!</H2>}
+        title={
+          <OurDemoTitle>
+            Make this demo <strong>a reality!</strong>
+          </OurDemoTitle>
+        }
         description={
           <div className="text">
             This was a demo showing you
@@ -73,7 +80,7 @@ const cards = [
         }
       />
     ),
-    content: <div />
+    content: <OurDemo />
   }
 ];
 
@@ -83,6 +90,7 @@ const OnePage = ({ cardsData }) => {
       {cardsData.map(card => (
         <Tile
           key={card.name}
+          name={card.name}
           style={card.style}
           contentStyle={card.contentStyle}
           title={card.title}

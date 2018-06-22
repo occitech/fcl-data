@@ -1,7 +1,9 @@
-$tilePadding: 16rem;
+$tileHorizontalSpacing: 16rem;
+$tileVerticalSpacing: 8rem;
 $tileMobilePadding: 2rem;
 $tileCardPadding: 8rem;
 $tileCardMobilePadding: 2rem;
+
 .tile {
   display: flex;
   flex-direction: column;
@@ -35,6 +37,14 @@ $tileCardMobilePadding: 2rem;
       box-shadow: 0 4px 8px rgba(51, 51, 51, 0.35);
     }
 
+    &--center {
+      text-align: center;
+      align-items: center;
+      .title-with-description {
+        width: 100%;
+      }
+    }
+
     &__description {
       width: 100%;
       overflow: hidden;
@@ -44,12 +54,15 @@ $tileCardMobilePadding: 2rem;
 
 @media screen and (min-width: $tablet) {
   .tile__content {
-    width: calc(100% - #{2 * $tilePadding});
-    padding: $tilePadding;
+    width: calc(100% - #{2 * $tileHorizontalSpacing});
+    padding: $tileVerticalSpacing $tileHorizontalSpacing;
     align-items: flex-start;
     &--card {
       width: calc(80% - #{$tileCardPadding});
       padding: $tileCardPadding;
+    }
+    &--center {
+      align-items: center;
     }
   }
 }

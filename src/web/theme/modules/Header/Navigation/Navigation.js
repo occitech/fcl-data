@@ -4,10 +4,11 @@ import "./Navigation.scss";
 const Navigation = () => {
   return (
     <nav className="navigation">
-      <ul>Browse sites</ul>
-      <ul>Our selection</ul>
-      <ul>Our database</ul>
-      <ul>contact us</ul>
+      <a href="#header">Home</a>
+      <a href="#our-selection">Our selection</a>
+      <a href="#our-database">Our database</a>
+      <a href="#our-demo">Our demo</a>
+      <a href="#footer">Contact us</a>
     </nav>
   );
 };

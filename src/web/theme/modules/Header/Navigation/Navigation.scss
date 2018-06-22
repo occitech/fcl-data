@@ -1,5 +1,12 @@
 .navigation {
+  position: relative;
+  z-index: 15;
   display: flex;
+
+  a {
+    color: $reverseFontColor;
+    text-decoration: none;
+  }
   > * {
     padding: 1em;
   }
