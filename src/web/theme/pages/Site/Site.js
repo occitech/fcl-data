@@ -30,7 +30,9 @@ const Site = ({ loading, site }) => {
   return (
     <div className="site">
       <div className="site__picture">
-        <img alt={site.name} src={createMediaUrlFromPath(site.picture)} />
+        {site.picture && (
+          <img alt={site.name} src={createMediaUrlFromPath(site.picture)} />
+        )}
       </div>
       <Tile
         style={"light-blue"}

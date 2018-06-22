@@ -17,6 +17,11 @@ $siteHeight: 10rem;
       width: 100vw;
     }
   }
+  .product-actions {
+    .button {
+      color: $white;
+    }
+  }
 }
 @media screen and (min-width: $tablet) {
   .site {

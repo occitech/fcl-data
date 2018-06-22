@@ -3,7 +3,7 @@ import { graphql } from "react-apollo";
 export default CartQuery =>
   graphql(CartQuery, {
     props: ({ data }) => ({
-      cart: !data.loading && data.cart,
+      cartTickets: !data.loading && data.cartTickets,
       loading: data.loading
     })
   });

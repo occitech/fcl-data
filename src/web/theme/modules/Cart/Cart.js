@@ -2,8 +2,8 @@ import React, { Component, Fragment } from "react";
 import compose from "recompose/compose";
 import withRouter from "react-router/withRouter";
 import EnhanceCart from "./EnhanceCart";
+import { Mutation } from "react-apollo";
 import CartQuery from "./CartQuery.gql";
-import CartItem from "./Item";
 import {
   ModalHeader,
   ModalContent,
@@ -11,8 +11,8 @@ import {
 } from "theme/ui/templates/Modal";
 import Button from "theme/ui/atoms/Button";
 import LoadingArea from "theme/ui/molecules/LoadingArea";
-import Recap from "theme/ui/organisms/Recap";
-import RecapTotal from "theme/ui/organisms/RecapTotal";
+import RemoveTicketMutation from "./RemoveTicketMutation.gql";
+import { H2 } from "../../ui/atoms/Typography/Heading";
 
 class Cart extends Component {
   constructor() {
@@ -26,12 +26,11 @@ class Cart extends Component {
   }
 
   render() {
-    const { cart, loading } = this.props;
-
+    const { cartTickets, loading } = this.props;
     if (loading) {
       return (
         <Fragment>
-          <ModalHeader>My Cart</ModalHeader>
+          <ModalHeader>Mon Panier</ModalHeader>
           <ModalContent>
             <LoadingArea>Loading…</LoadingArea>
           </ModalContent>
@@ -39,44 +38,40 @@ class Cart extends Component {
       );
     }
 
-    const cartLength =
-      cart && cart.items && cart.items.length ? cart.items.length : 0;
-
     return (
       <Fragment>
-        <ModalHeader>
-          My Cart
-          {cartLength > 0
-            ? cartLength === 1
-              ? " - 1 item"
-              : ` - ${cartLength} items`
-            : null}
-        </ModalHeader>
+        <ModalHeader>Mon Panier</ModalHeader>
         <ModalContent>
-          {cartLength > 0 ? (
-            <Recap
-              result={
-                <RecapTotal
-                  title="Subtotal"
-                  price={cart.totals.subtotalInclTax}
-                />
-              }
-            >
-              {cart.items.map(item => (
-                <CartItem
-                  key={item.item_id}
-                  price={item.priceInfo.rowTotalInclTax}
-                  imageUrl={item.product.imageUrl}
-                  name={item.name}
-                  sku={item.sku}
-                  qty={item.qty}
-                  id={item.item_id}
-                />
-              ))}
-            </Recap>
-          ) : (
-            <div>Your cart is empty.</div>
-          )}
+          <div className="cart-ticket">
+            <div className="cart-ticket__title">Ticket(s) :</div>
+            {cartTickets.map(
+              (cartTicket, index) =>
+                cartTicket.name && (
+                  <div key={index}>
+                    <H2>{cartTicket.name}</H2>
+                    <Mutation mutation={RemoveTicketMutation}>
+                      {removeTicketFromCart => (
+                        <Button
+                          onClick={e => {
+                            e.preventDefault();
+                            removeTicketFromCart({
+                              variables: {
+                                ticket: {
+                                  id: cartTicket.id,
+                                  name: cartTicket.name
+                                }
+                              }
+                            });
+                          }}
+                        >
+                          Supprimer le ticket
+                        </Button>
+                      )}
+                    </Mutation>
+                  </div>
+                )
+            )}
+          </div>
         </ModalContent>
         <ModalAction>
           <Button onClick={this.launchCheckout} type="full-size">
