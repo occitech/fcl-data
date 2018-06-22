@@ -1,12 +1,12 @@
 import typeDefs from "./schema.gql";
 import loader from "./loader";
 import resolvers from "./resolvers";
-import MakeDataTourismClient from "./clients/MakeDataTourismClient";
-import MakeDiffuseurDataTourismClient from "./clients/MakeDiffuseurDataTourismClient";
+import makeDataTourismClient from "./clients/makeDataTourismClient";
+import makeDiffuseurDataTourismClient from "./clients/makeDiffuseurDataTourismClient";
 
 export default {
   namespace: "DataTourisme",
-  context: loader(MakeDiffuseurDataTourismClient, MakeDataTourismClient),
+  context: loader(makeDiffuseurDataTourismClient, makeDataTourismClient),
   typeDefs,
   resolvers
 };

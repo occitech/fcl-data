@@ -40,7 +40,7 @@ const OurSelection = ({
   );
 };
 
-OurSelection.PropTypes = {
+OurSelection.propTypes = {
   ourSelectionTranslate: PropTypes.number,
   setOurSelectionTranslate: PropTypes.func,
   loading: PropTypes.bool

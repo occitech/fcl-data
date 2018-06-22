@@ -9,13 +9,11 @@ const OurDatabase = ({ sites, loading }) => {
   return sites ? (
     <div className="our-database">
       <div className="our-database__graph">
-        <HistogramSiteType sites={sites} id="histogram" />
+        <HistogramSiteType sites={sites} id="sites-types" />
       </div>
       <div className="our-database__graph">
-        <LanguageHistogram sites={sites} id="graph2" />
+        <LanguageHistogram sites={sites} id="languages" />
       </div>
-      <div id="graph3" />
-      <div id="graph4" />
     </div>
   ) : (
     <div>Loading ...</div>

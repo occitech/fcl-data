@@ -1,39 +1,11 @@
+import {
+  getSchemaPictureObjectFromSitesObject,
+  getPictureUrlFromSchemaPictureObject,
+  getSchemaGeoObjectFromSitesObject,
+  getLatLongFromSchemaGeoObject
+} from "./adapters";
+
 const dataTourisme = {};
-
-const FilterObjectsByChildrenKey = (objects, assertingKey) => {
-  return objects.filter(object => {
-    let objectFound = false;
-    Object.keys(object).forEach(key => {
-      if (key === assertingKey) {
-        objectFound = true;
-      }
-    });
-    return objectFound;
-  });
-};
-
-const getSchemaPictureObjectFromSitesObject = response => {
-  return FilterObjectsByChildrenKey(
-    response,
-    "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasRelatedResource"
-  )[0][
-    "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasRelatedResource"
-  ][0]["@id"].replace("https://data.datatourisme.gouv.fr/", "");
-};
-const getPictureUrlFromSchemaPictureObject = schemaPic => {
-  return FilterObjectsByChildrenKey(
-    schemaPic,
-    "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#locator"
-  )[0];
-};
-const getSchemaGeoObjectFromSitesObject = response => {
-  return FilterObjectsByChildrenKey(response, "http://schema.org/geo")[0][
-    "http://schema.org/geo"
-  ][0]["@id"].replace("https://data.datatourisme.gouv.fr/", "");
-};
-const getLatLongFromSchemaGeoObject = schemaGeo => {
-  return FilterObjectsByChildrenKey(schemaGeo, "http://schema.org/latitude")[0];
-};
 
 export default {
   Query: {

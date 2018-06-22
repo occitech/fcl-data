@@ -14,7 +14,7 @@ import NotFound from "./theme/pages/NotFound";
 
 export default () => (
   <BrowserRouter>
-    <Layout header={<div />} footer={<Footer />}>
+    <Layout header={<div />} footer={<div />}>
       <Switch>
         <Route
           exact
@@ -25,11 +25,21 @@ export default () => (
                 <Header />
                 <Home />
                 <OnePage />
+                <Footer />
               </Fragment>
             );
           }}
         />
-        <Route exact path="/site/:id" component={() => <Site />} />
+        <Route
+          exact
+          path="/site/:id"
+          component={() => (
+            <Fragment>
+              <Site />
+              <Footer isProductPage />
+            </Fragment>
+          )}
+        />
         <Route component={NotFound} />
       </Switch>
     </Layout>

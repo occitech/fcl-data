@@ -37,7 +37,7 @@ const OurSelectionToggler = ({
   );
 };
 
-OurSelectionToggler.PropTypes = {
+OurSelectionToggler.propTypes = {
   ourSelectionTranslate: PropTypes.number,
   setOurSelectionTranslate: PropTypes.func,
   cardWidth: PropTypes.number,

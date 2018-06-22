@@ -18,7 +18,7 @@ import EnhanceSite from "./EnhanceSite";
 import SiteQuery from "./SiteQuery.gql";
 import LoadingArea from "theme/ui/molecules/LoadingArea";
 import createMediaUrlFromPath from "../../../utils/createMediaUrlFromPath";
-import "./site.scss";
+import "./Site.scss";
 
 const Site = ({ loading, site }) => {
   if (loading) {
@@ -29,11 +29,16 @@ const Site = ({ loading, site }) => {
 
   return (
     <div className="site">
-      <div className="site__picture">
-        {site.picture && (
-          <img alt={site.name} src={createMediaUrlFromPath(site.picture)} />
-        )}
-      </div>
+      <div
+        className="site__picture"
+        style={{
+          backgroundImage: `url(${
+            site.picture
+              ? createMediaUrlFromPath(site.picture)
+              : "http://www.africanflair.com/wp-content/uploads/2015/10/pix-horizontal-placeholder.jpg"
+          }`
+        }}
+      />
       <Tile
         style={"light-blue"}
         contentStyle={"card"}
