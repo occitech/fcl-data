@@ -115,7 +115,7 @@ class LanguageHistogram extends Component {
                 language = "RU";
                 break;
               default:
-              // language = "N/A";
+                break;
             }
 
             languageData[language]
