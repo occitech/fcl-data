@@ -134,7 +134,7 @@ class LanguageHistogram extends Component {
       var width = 800 - margin.left - margin.right;
       var height = 500 - margin.top - margin.bottom;
       var svg = d3
-        .select("svg#graph2")
+        .select("svg#languages")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom);
       var g = svg

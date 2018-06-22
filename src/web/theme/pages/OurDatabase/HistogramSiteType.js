@@ -27,21 +27,21 @@ class HistogramSiteType extends Component {
       );
 
       d3
-        .select("#histogram")
-        .selectAll("#histogram span")
+        .select("#sites-types")
+        .selectAll("#sites-types span")
         .data(typeValues)
         .enter()
         .append("span");
 
       d3
-        .select("#histogram")
-        .selectAll("#histogram span")
+        .select("#sites-types")
+        .selectAll("#sites-types span")
         .data(typeValues)
         .exit()
         .remove();
 
       d3
-        .selectAll("#histogram span")
+        .selectAll("#sites-types span")
         .data(typeValues)
         .transition()
         .duration(300)
