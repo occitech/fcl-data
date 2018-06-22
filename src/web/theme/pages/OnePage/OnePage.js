@@ -10,6 +10,10 @@ import OurDatabase from "theme/pages/OurDatabase";
 import OurDemo from "theme/pages/OurDemo";
 import OurDemoTitle from "theme/pages/OurDemo/OurDemoTitle";
 
+function getRandomArbitrary(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
 const cards = [
   {
     name: "our-selection",
@@ -29,7 +33,7 @@ const cards = [
         }
       />
     ),
-    content: <OurSelection />
+    content: <OurSelection randomSitesIndex={getRandomArbitrary(100, 2000)} />
   },
   {
     name: "our-database",

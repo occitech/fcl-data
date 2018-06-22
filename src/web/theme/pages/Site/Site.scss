@@ -1,0 +1,58 @@
+$siteLargeDesktopHeight: 25rem;
+$siteDesktopHeight: 20rem;
+$siteTabletHeight: 15rem;
+$siteHeight: 10rem;
+
+.site {
+  &__picture {
+    text-align: center;
+    height: $siteHeight;
+    overflow: hidden;
+    background: no-repeat center;
+    background-size: cover;
+
+    img {
+      top: 0;
+      left: 0;
+      position: absolute;
+      z-index: -1;
+      width: 100vw;
+    }
+  }
+  .product-actions {
+    .button {
+      color: $white;
+    }
+  }
+}
+@media screen and (min-width: $tablet) {
+  .site {
+    &__picture {
+      height: $siteTabletHeight;
+    }
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  .site {
+    &__picture {
+      height: $siteDesktopHeight;
+    }
+  }
+}
+
+@media screen and (min-width: $largeDesktop) {
+  .site {
+    &__picture {
+      height: $siteLargeDesktopHeight;
+    }
+  }
+}
+.leaflet-control,
+.leaflet-pane,
+.leaflet-top,
+.leaflet-left,
+.leaflet-bottom,
+.leaflet-right {
+  z-index: 0;
+}

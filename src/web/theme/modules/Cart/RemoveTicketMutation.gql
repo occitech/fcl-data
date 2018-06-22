@@ -1,0 +1,3 @@
+mutation removeTicketFromCart($ticket: CartTicket!) {
+  removeTicketFromCart(ticket: $ticket) @client
+}

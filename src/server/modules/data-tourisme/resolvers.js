@@ -1,4 +1,6 @@
 import {
+  getSchemaPictureObjectFromSitesObject,
+  getPictureUrlFromSchemaPictureObject,
   getSchemaGeoObjectFromSitesObject,
   getLatLongFromSchemaGeoObject
 } from "./adapters";
@@ -26,7 +28,8 @@ export default {
                 ? site["rdfs:comment"]["@value"]
                 : null,
               type: site["@type"] ? site["@type"] : null,
-              language: site.availableLanguage ? site.availableLanguage : null
+              language: site.availableLanguage ? site.availableLanguage : null,
+              hasRepresentation: site.hasRepresentation ? true : false
             };
           })
         );
@@ -65,6 +68,24 @@ export default {
                         "http://schema.org/longitude"
                       ][0]["@value"]
                     }))
+                : null,
+              picture: site.hasRepresentation
+                ? context
+                    .loadSitesLocation(
+                      site.hasRepresentation["@id"].replace("data:", "")
+                    )
+
+                    .then(response =>
+                      context.loadSitesLocation(
+                        getSchemaPictureObjectFromSitesObject(response)
+                      )
+                    )
+                    .then(
+                      schemaPic =>
+                        getPictureUrlFromSchemaPictureObject(schemaPic)[
+                          "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#locator"
+                        ][0]["@value"]
+                    )
                 : null
             };
           })[0]

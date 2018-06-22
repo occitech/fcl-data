@@ -1,7 +1,6 @@
-#import "./CartFragment.gql"
-
 query Cart {
-  cart {
-    ...CartFragment
+  cartTickets @client {
+    id
+    name
   }
 }

@@ -3,9 +3,11 @@ import ReactDOM from "react-dom";
 import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "react-apollo";
 import Router from "./Router";
+import clientState from "./client-state";
 
 const client = new ApolloClient({
-  uri: "http://127.0.0.1:4000/graphql"
+  uri: "http://127.0.0.1:4000/graphql",
+  clientState
 });
 
 ReactDOM.render(

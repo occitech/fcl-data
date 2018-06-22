@@ -1,11 +1,3 @@
-#import "theme/modules/Cart/CartFragment.gql"
-
-mutation addItemToCart($sku: String!) {
-  addItemToCart(sku: $sku) {
-    success
-    errorMessage
-    cart {
-      ...CartFragment
-    }
-  }
+mutation addTicketToCart($ticket: CartTicket!) {
+  addTicketToCart(ticket: $ticket) @client
 }
