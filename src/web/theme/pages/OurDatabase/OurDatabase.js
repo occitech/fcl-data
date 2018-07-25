@@ -1,14 +1,22 @@
 import React from "react";
-import PropTypes from "prop-types";
+import HistogramSiteType from "./HistogramSiteType";
+import LanguageHistogram from "./LanguageHistogram";
 import EnhanceOurDatabase from "./EnhanceOurDatabase";
 import OurDatabaseQuery from "./OurDatabaseQuery.gql";
 import "./OurDatabase.scss";
 
 const OurDatabase = ({ sites, loading }) => {
-  return (
-    <div>
-      <div id="histogram" />
+  return sites ? (
+    <div className="our-database">
+      <div className="our-database__graph">
+        <HistogramSiteType sites={sites} id="sites-types" />
+      </div>
+      <div className="our-database__graph">
+        <LanguageHistogram sites={sites} id="languages" />
+      </div>
     </div>
+  ) : (
+    <div>Loading ...</div>
   );
 };
 

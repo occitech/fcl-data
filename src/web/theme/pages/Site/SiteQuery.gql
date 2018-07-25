@@ -1,0 +1,20 @@
+fragment Site on Site {
+  id
+  name
+  type
+  description
+  language
+  picture
+  location {
+    latitude
+    longitude
+  }
+}
+
+query Site($id: ID!) {
+  data {
+    site(id: $id) {
+      ...Site
+    }
+  }
+}

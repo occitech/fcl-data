@@ -5,22 +5,36 @@ type Query {
 
 "General information about the differents sites that you can visit"
 type DataTourisme {
-  "data name"
+  "Data name"
   name: String!
-  "sites"
+  "Get all the sites"
   sites: [Site]!
-  "madata"
-  madata: String!
+  "Get an unique site"
+  site(id: ID!): Site
 }
 
 "General information about a specific site"
 type Site {
-  "site id"
+  "Site id"
   id: ID!
-  "site name"
+  "Site name"
   name: String
-  "site description"
+  "Site description"
   description: String
-  "site types"
+  "Site types"
   type: [String]!
+  "Site language"
+  language: [String]
+  "Site location"
+  location: Location
+  "site picture representation"
+  picture: String
+  "site has picture representation"
+  hasRepresentation: Boolean
+}
+
+"Classic geoLocation format"
+type Location {
+  latitude: Float
+  longitude: Float
 }

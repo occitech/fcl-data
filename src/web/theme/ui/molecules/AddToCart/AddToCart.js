@@ -4,14 +4,20 @@ import { Mutation } from "react-apollo";
 import Button from "theme/ui/atoms/Button";
 import AddToCartMutation from "./AddToCartMutation.gql";
 
-const AddToCart = ({ children, sku, onAdded }) => {
+const AddToCart = ({ children, sku, onAdded, site }) => {
+  const variables = {
+    ticket: {
+      id: site.product.id,
+      name: site.product.name
+    }
+  };
   return (
     <Mutation mutation={AddToCartMutation} onCompleted={onAdded}>
-      {(addToCart, { loading }) => (
+      {(addTicketToCart, { loading }) => (
         <Button
           onClick={e => {
             e.preventDefault();
-            addToCart({ variables: { sku } });
+            addTicketToCart({ variables: variables });
           }}
           status={loading ? "loading" : ""}
         >
@@ -24,7 +30,7 @@ const AddToCart = ({ children, sku, onAdded }) => {
 
 AddToCart.propTypes = {
   children: PropTypes.node.isRequired,
-  sku: PropTypes.string.isRequired,
+  sku: PropTypes.string,
   onAdded: PropTypes.func
 };
 

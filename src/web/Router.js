@@ -7,13 +7,14 @@ import Layout from "./theme/ui/templates/Layout";
 import Header from "./theme/modules/Header";
 import Footer from "./theme/modules/Footer";
 import Home from "./theme/pages/Home";
+import Site from "./theme/pages/Site";
 
 import OnePage from "theme/pages/OnePage";
 import NotFound from "./theme/pages/NotFound";
 
 export default () => (
   <BrowserRouter>
-    <Layout header={<Header />} footer={<Footer />}>
+    <Layout header={<div />} footer={<div />}>
       <Switch>
         <Route
           exact
@@ -21,11 +22,23 @@ export default () => (
           component={() => {
             return (
               <Fragment>
+                <Header />
                 <Home />
                 <OnePage />
+                <Footer />
               </Fragment>
             );
           }}
+        />
+        <Route
+          exact
+          path="/site/:id"
+          component={() => (
+            <Fragment>
+              <Site />
+              <Footer isProductPage />
+            </Fragment>
+          )}
         />
         <Route component={NotFound} />
       </Switch>

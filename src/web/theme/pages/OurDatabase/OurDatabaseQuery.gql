@@ -3,6 +3,7 @@ query OurSelection {
     sites {
       id
       type
+      language
     }
   }
 }

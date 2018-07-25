@@ -4,15 +4,15 @@ import Logo from "theme/ui/atoms/Logo";
 import Navigation from "theme/modules/Header/Navigation";
 import "./Footer.scss";
 
-const Footer = () => {
+const Footer = isProductPage => {
   return (
-    <footer className="footer">
+    <footer id="footer" className="footer">
       <div className="footer__logo">
         <Link to="/">
           <Logo />
         </Link>
       </div>
-      <Navigation />
+      {isProductPage ? null : <Navigation />}
     </footer>
   );
 };

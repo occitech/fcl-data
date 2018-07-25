@@ -12,7 +12,8 @@ const OurSelection = ({
   sites,
   loading,
   ourSelectionTranslate,
-  setOurSelectionTranslate
+  setOurSelectionTranslate,
+  randomSitesIndex
 }) => {
   return loading ? (
     <div> Loading ...</div>
@@ -28,15 +29,18 @@ const OurSelection = ({
         style={{ transform: `translateX(-${ourSelectionTranslate}em)` }}
         className="our-selection"
       >
-        {sites.map((site, index) => (
-          <SiteCard key={site.name + index} site={site} siteIndex={index} />
-        ))}
+        {sites.map(
+          (site, index) =>
+            site.description && (
+              <SiteCard key={site.name + index} site={site} siteIndex={index} />
+            )
+        )}
       </div>
     </Fragment>
   );
 };
 
-OurSelection.PropTypes = {
+OurSelection.propTypes = {
   ourSelectionTranslate: PropTypes.number,
   setOurSelectionTranslate: PropTypes.func,
   loading: PropTypes.bool
